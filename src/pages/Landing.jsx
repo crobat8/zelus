@@ -6,8 +6,6 @@ import ReactCardFlip from "react-card-flip";
 import ResetPassword from '../componets/ResetPassword';
 import background from '../img/home_banner_edit.png'
 import RedLogo from '../img/CWU_wildcat_spirit_mark_RGB.png'
-import Whitelogo from '../img/WhiteBackLogo.png'
-import Clearlogo from '../img/ClearBackLogo.png'
 import Pill from '../componets/Pill';
 import FadeIn from 'react-fade-in';
 

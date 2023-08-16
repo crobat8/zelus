@@ -193,18 +193,24 @@ $neutral: #F1E5C3;
       grid-template-columns: 1fr 3fr 1fr;
       position: sticky;
       top: 0;
-      background: $usedGrey1;
+      background: black;
       width: calc(100% - 20px);
       z-index: 100;
       padding: 10px;
       text-align: right;
       height: fit-content;
       height: 100px;
+      .iconHolder{
+        display: block;
+        padding-left: 0;
+        text-align: left;
+      }
       img{
         padding: 10px;
         height: 80px;
         float: left;
       }
+      
       .selectors{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -216,30 +222,17 @@ $neutral: #F1E5C3;
           width: 100px;
           border-radius: 20px;
           background-color: $usedGrey1;
-          color: $usedBlue1;
-          border-color: $usedBlue1;
+          color: white;
+          border-color: $crimson;
           transition: 0.5s;
         }
         button:hover{
           background-color: black;
         }
       }
-      .logoutarea{
-        .logout{
-          background-color: $usedGrey1;
-          color: $usedRed1;
-          border: solid $usedRed1 2px;
-          border-radius: 5px;
-          padding: 10px;
-          transition: 0.5s;
-        }
-        .logout:hover{
-          background-color: black;
-        }
-      }  
     }
     main{
-      background-color: $usedBlue1;
+      display: flex;
       min-height: 800px;
       .create{
         display: grid;
@@ -456,9 +449,9 @@ $neutral: #F1E5C3;
       }
     }
     .information{
-      background-color: $usedGrey1;
+      background-color: black;
       min-height: 100px;
-      color: $usedBlue1;
+      color: white;
       .infoTop{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -489,7 +482,7 @@ $neutral: #F1E5C3;
           }
           button{
             padding: 10px;
-            color: $usedBlue1;
+            color: white;
             padding: 0;
             border: none;
             background: none;
