@@ -65,7 +65,7 @@ const Landing = () =>{
         <img src={RedLogo} alt='logo' /> 
         <div className='title'>
           <h1>
-            CWU Practice Guide
+            CWU Track an Field 
           </h1>
           <p>
             athlete page
