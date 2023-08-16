@@ -34,21 +34,6 @@ const Login = ({change}) => {
     }
   };
 
-
-  // const handleGuest = async (e) => {
-  //   e.preventDefault();
-  //   const email = "PartyUpContact@gmail.com";
-  //   const password = "PartyupGuest21%";
-
-  //   try {
-  //     await signInWithEmailAndPassword(auth, email, password);
-  //     navigate("/")
-  //   } catch (err) {
-  //     setErr(true);
-  //   }
-  // };
-  
-
   return (
       
       <div className="formWrapper"  >

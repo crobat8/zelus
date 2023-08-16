@@ -5,6 +5,9 @@ $usedGrey2:#3B3B3B;
 $usedYellow1:#ffd000;
 $usedYellow2:#cea800;
 $usedYellow3:#947900;
+$crimson: #A30f32;
+$crimson2: #8B0025;
+$neutral: #F1E5C3;
 *{
   margin: 0;
   padding: 0;
@@ -12,7 +15,7 @@ $usedYellow3:#947900;
     .topBar{
       position: sticky;
       top: 0;
-      background: $usedGrey1;
+      background: black;
       width: calc(100% - 20px);
       z-index: 100;
       padding: 10px;
@@ -24,10 +27,10 @@ $usedYellow3:#947900;
         padding: 10px;
         float: left;
       }
-      p{
+      h1{
         color: #FFF;
-        font-size: 20px;
-        padding-top: 40px;
+        
+        padding-top: 20px;
         padding-right: 20px;
       }
     }
@@ -40,8 +43,9 @@ $usedYellow3:#947900;
           .formWrapper{
             padding: 10px;
             height: fit-content;                
-            h3{
+            h2{
               text-align: center;
+              padding: 10px;
             }
             form{
               display: flex;
@@ -144,13 +148,13 @@ $usedYellow3:#947900;
         .pill{
           border-radius: 30px;
           margin: 5%;
-          border: solid $usedBlue1 2px;
+          border: solid $crimson 2px;
           display: grid;
           grid-template-columns: 1fr 1fr;
           overflow: hidden;
           .text{
             padding: 10%;
-            background-color: $usedBlue1;
+            background-color: $crimson;
             font-size: 25px;
             h2{
               margin-bottom: 10px;
