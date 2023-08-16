@@ -63,9 +63,15 @@ const Landing = () =>{
       
       <header className="topBar" >
         <img src={RedLogo} alt='logo' /> 
-        <h1>
-          CWU Practice Guide
-        </h1>
+        <div className='title'>
+          <h1>
+            CWU Practice Guide
+          </h1>
+          <p>
+            athlete page
+          </p>
+        </div>
+        
       </header>
       <main >
         <FadeIn delay={100}>

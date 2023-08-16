@@ -44,9 +44,7 @@ import {
 import { 
   AuthContext
 } from "../context/AuthContext";
-import MultipleChoice from './MultipleChoiceInput';
-import FillInBlank from './FillInBlankInput';
-import LongAnswer from './LongAnswerInput';
+
 
 const Create = () =>{ 
   const{currentUser} = useContext(AuthContext);
@@ -58,19 +56,6 @@ const Create = () =>{
   function HandleForm(){
     
 
-    if(form === 1){
-      return (
-        <MultipleChoice uid={currentUser.uid} classes={brokenDown}/>
-      )
-    }else if(form === 2){
-      return (
-        <FillInBlank uid={currentUser.uid} classes={brokenDown}/>
-      )
-    }else if(form === 3){
-      return (
-        <LongAnswer uid={currentUser.uid} classes={brokenDown}/>
-      )
-    }else{
       return (
         <div style={{"min-height": "1000px","textAlign":"center"}}>
           <h1 style={{"backgroundColor":"#00b2be",
@@ -81,7 +66,7 @@ const Create = () =>{
           </h1>
         </div>
       )
-    }
+    
   }
   
   
