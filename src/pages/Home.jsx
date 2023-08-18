@@ -18,11 +18,12 @@ const Home = () =>{
   const [page,setPage] = useState(1);
   const [open,setOpen] = useState(true);
   const{currentUser} = useContext(AuthContext);
-
+  
   let socialIconStyles = { color: "white", fontSize: "1.5em" ,padding:"5px"};
   let menuIconStyle = { color: "white", fontSize: "1.5em" ,padding:"10px",marginLeft:"0px"};
 
   function handleOpen(){
+
     setOpen(!open)
   }
 
@@ -74,7 +75,7 @@ const Home = () =>{
       <main className="page" >
         <Sidebar
           collapsed={open}
-          width='150px'
+          width='200px'
           collapsedWidth='0px'
         >
           <Menu>
@@ -83,11 +84,15 @@ const Home = () =>{
                 <MenuItem onClick={()=>setPage(1)}> 1st </MenuItem>
                 <MenuItem onClick={()=>setPage(2)}> 2nd </MenuItem>
               </SubMenu>
-              <MenuItem onClick={()=>setPage(1)}> Practices </MenuItem>
-              <MenuItem onClick={()=>setPage(2)}> Lifts </MenuItem>
             </SubMenu>
-            <MenuItem onClick={()=>setPage(4)}> Projections </MenuItem>
-            <MenuItem onClick={()=>signOut(auth)}> Logout </MenuItem>
+            <SubMenu label="Lifts">
+              <SubMenu label="September">
+                <MenuItem onClick={()=>setPage(1)}> 1st </MenuItem>
+                <MenuItem onClick={()=>setPage(2)}> 2nd </MenuItem>
+              </SubMenu>
+            </SubMenu>
+            <MenuItem onClick={()=>setPage(4)}> Coaching requests </MenuItem>
+            <MenuItem onClick={()=>signOut(auth)}> <b>Logout</b>  </MenuItem>
           </Menu>
         </Sidebar>
         <HandleSwap/>
