@@ -13,12 +13,13 @@ import {
   AiOutlineMenu
 } from 'react-icons/ai';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+import { UserContext } from '../context/UserContext';
 const Home = () =>{ 
     
   const [page,setPage] = useState(1);
   const [open,setOpen] = useState(true);
   const{currentUser} = useContext(AuthContext);
-  
+  const{userInfo} =useContext(UserContext);
   let socialIconStyles = { color: "white", fontSize: "1.5em" ,padding:"5px"};
   let menuIconStyle = { color: "white", fontSize: "1.5em" ,padding:"10px",marginLeft:"0px"};
 
@@ -67,10 +68,15 @@ const Home = () =>{
         <div onClick={()=>handleOpen()} className='iconHolder'>
           <AiOutlineMenu style={menuIconStyle}/>
         </div>
-        <div className='space'>
-
-        </div>
         <img src={RedLogo} alt='logo' /> 
+        <div className='space'>
+          <h3>
+            <b>
+              {userInfo[0].displayName}
+            </b>
+          </h3>
+        </div>
+        
       </header>
       <main className="page" >
         <Sidebar
