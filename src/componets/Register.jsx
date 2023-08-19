@@ -69,13 +69,20 @@ const Register = ({change}) => {
           uid: res.user.uid,
           displayName,
           lowerDisplayName,
-          brokenDisplayName,
+          
           email,
           photoURL: "https://firebasestorage.googleapis.com/v0/b/partyup-76d1a.appspot.com/o/GUEST1689117670991?alt=media&token=7c0d02f7-4b98-4f24-a070-5c82b5b368ab"
 
-        }).then(() => {
-          console.log("Successful")}
-        );
+        }).then(async ()  => {
+          await setDoc(doc(db,"names",res.user.uid), {
+            brokenDisplayName,
+            displayName,
+            uid: res.user.uid,
+            lowerDisplayName,
+          }).then(() => {
+            console.log("Successful")}
+          );
+        });
       } catch (err) {
         console.log(err);
         setErr(true);
