@@ -54,17 +54,16 @@ const Requests = () =>{
   }
 
   useEffect(() => {
-    if(userInfo[0].requests.length == 0){
+    if(userInfo[0].requests ==undefined||userInfo[0].requests.length == 0 ){
 
     }else{
-      console.log("tests")
       getRequestInfo();
     }
     
 
   }, []);
 
-  if(!userInfo[0].requests){
+  if(userInfo[0].requests ==undefined||userInfo[0].requests.length == 0 ){
     return(
       <h1>
         you have no requests

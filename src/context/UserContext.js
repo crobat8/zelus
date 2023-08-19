@@ -10,7 +10,6 @@ export const UserContext = createContext();
 
 export const UserContextProvider = ({ children }) => {
   const { currentUser } = useContext(AuthContext);
-  console.log(currentUser);
   const [userInfo,setUserInfo]=useState("")
   
   useEffect(() => {

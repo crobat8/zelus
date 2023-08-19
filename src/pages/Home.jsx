@@ -25,7 +25,6 @@ const Home = () =>{
   let menuIconStyle = { color: "white", fontSize: "1.5em" ,padding:"10px",marginLeft:"0px"};
 
   function handleOpen(){
-    console.log(userInfo[0])
     setOpen(!open)
   }
 
