@@ -14,6 +14,7 @@ import {
 } from 'react-icons/ai';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import { UserContext } from '../context/UserContext';
+import Requests from '../componets/Requests';
 const Home = () =>{ 
     
   const [page,setPage] = useState(1);
@@ -49,9 +50,7 @@ const Home = () =>{
       ) 
     }else if(page === 4){
       return(
-        <h1>
-          page 4
-        </h1>
+        <Requests/>
       )  
     }else{
       return (
@@ -93,8 +92,8 @@ const Home = () =>{
           collapsedWidth='0px'
         >
           <Menu>
-            <SubMenu label="Practice">
-              <SubMenu label="September">
+            <SubMenu label="Practice" defaultOpen={true}>
+              <SubMenu label="September" >
                 <MenuItem onClick={()=>setPage(1)}> 1st </MenuItem>
                 <MenuItem onClick={()=>setPage(2)}> 2nd </MenuItem>
               </SubMenu>
@@ -105,7 +104,7 @@ const Home = () =>{
                 <MenuItem onClick={()=>setPage(2)}> 2nd </MenuItem>
               </SubMenu>
             </SubMenu>
-            <MenuItem onClick={()=>setPage(4)}> Coaching requests <b>{userInfo[0].requests.length}</b></MenuItem>
+            <MenuItem onClick={()=>setPage(4)}> Coaching requests <b>{!!userInfo[0].requests?userInfo[0].requests.length:""}</b></MenuItem>
             <MenuItem onClick={()=>signOut(auth)}> <b>Logout</b>  </MenuItem>
           </Menu>
         </Sidebar>
