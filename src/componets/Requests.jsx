@@ -23,10 +23,10 @@ const Requests = () =>{
   const{userInfo} =useContext(UserContext);
   const[requests,setRequests] = useState([])
 
-  const getRequestInfo = async (e)=>{
+  const getRequestInfo = async ()=>{
     var temp = []
     const q = query(
-      collection(db, "users"),
+      collection(db, "names"),
       where("uid", "in",userInfo[0].requests )
     );
     const querySnapshot = await getDocs(q);
@@ -34,6 +34,7 @@ const Requests = () =>{
       temp.push(doc.data())
       setRequests(temp)
     });
+
   }
 
   function confirmRequest (x){
@@ -53,7 +54,10 @@ const Requests = () =>{
   }
 
   useEffect(() => {
-    if(!userInfo[0].requests){
+    if(userInfo[0].requests.length == 0){
+
+    }else{
+      console.log("tests")
       getRequestInfo();
     }
     
@@ -73,7 +77,7 @@ const Requests = () =>{
         Request Page
       </h1>
       {requests.map((e,i)=>{
-
+        console.log(e)
         return(
           <div className="request">
             <h3>
