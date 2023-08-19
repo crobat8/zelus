@@ -24,7 +24,7 @@ const Home = () =>{
   let menuIconStyle = { color: "white", fontSize: "1.5em" ,padding:"10px",marginLeft:"0px"};
 
   function handleOpen(){
-
+    console.log(userInfo[0])
     setOpen(!open)
   }
 
@@ -60,6 +60,14 @@ const Home = () =>{
         </h1>
       )
     }
+  }
+  
+  if(!userInfo){
+    return(
+      <h1>
+        Loading
+      </h1>
+    )
   }
 
   return (
@@ -97,7 +105,7 @@ const Home = () =>{
                 <MenuItem onClick={()=>setPage(2)}> 2nd </MenuItem>
               </SubMenu>
             </SubMenu>
-            <MenuItem onClick={()=>setPage(4)}> Coaching requests </MenuItem>
+            <MenuItem onClick={()=>setPage(4)}> Coaching requests <b>{userInfo[0].requests.length}</b></MenuItem>
             <MenuItem onClick={()=>signOut(auth)}> <b>Logout</b>  </MenuItem>
           </Menu>
         </Sidebar>
