@@ -104,6 +104,7 @@ const Home = () =>{
               </SubMenu>
             </SubMenu>
             <MenuItem onClick={()=>setPage(4)}> Coaching requests <b>{!!userInfo[0].requests?userInfo[0].requests.length:""}</b></MenuItem>
+            <MenuItem onClick={()=>setPage(4)}> this week schedule</MenuItem>
             <MenuItem onClick={()=>signOut(auth)}> <b>Logout</b>  </MenuItem>
           </Menu>
         </Sidebar>
