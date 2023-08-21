@@ -20,8 +20,7 @@ const Login = ({change}) => {
   let iconStyles = { color: "#1B2430", height:"16px",width:"16px",padding:"5px"};
 
   const handleSubmit = async (e) => {
-    console.log(e.target[0].value)
-    console.log(e.target[1].value)
+
     e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
