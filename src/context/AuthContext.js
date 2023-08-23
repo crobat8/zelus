@@ -8,6 +8,7 @@ export const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading,setLoading] = useState(true)
   useEffect(() => {
+    setCurrentUser(null);
     const unsub = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
       setLoading(false)
@@ -20,7 +21,7 @@ export const AuthContextProvider = ({ children }) => {
   if(loading){
     return(
       <h1>
-        loading
+        loading authentication
       </h1>
     )
   }

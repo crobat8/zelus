@@ -15,6 +15,7 @@ import {
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import { UserContext } from '../context/UserContext';
 import Requests from '../componets/Requests';
+import Practices from '../componets/Practices';
 const Home = () =>{ 
     
   const [page,setPage] = useState(1);
@@ -31,9 +32,7 @@ const Home = () =>{
   function HandleSwap(){
     if(page === 1){
       return (
-        <h1>
-          page 1
-        </h1>
+        <Practices/>
       )
     }else if(page === 2){
       return (
@@ -91,18 +90,8 @@ const Home = () =>{
           collapsedWidth='0px'
         >
           <Menu>
-            <SubMenu label="Practice" defaultOpen={true}>
-              <SubMenu label="September" >
-                <MenuItem onClick={()=>setPage(1)}> 1st </MenuItem>
-                <MenuItem onClick={()=>setPage(2)}> 2nd </MenuItem>
-              </SubMenu>
-            </SubMenu>
-            <SubMenu label="Lifts">
-              <SubMenu label="September">
-                <MenuItem onClick={()=>setPage(1)}> 1st </MenuItem>
-                <MenuItem onClick={()=>setPage(2)}> 2nd </MenuItem>
-              </SubMenu>
-            </SubMenu>
+            <MenuItem onClick={()=>setPage(1)}> Practices </MenuItem>
+            <MenuItem onClick={()=>setPage(2)}> Lifts </MenuItem>
             <MenuItem onClick={()=>setPage(3)}> this week schedule</MenuItem>
             <MenuItem onClick={()=>setPage(4)}> Coaching requests <b>{!!userInfo[0].requests?userInfo[0].requests.length:""}</b></MenuItem>
             
