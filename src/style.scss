@@ -1,10 +1,8 @@
 $usedBlue1:#478FFB;
-$usedRed1:#ED2326;
+
 $usedGrey1:#2B2B2B;
 $usedGrey2:#3B3B3B;
-$usedYellow1:#ffd000;
-$usedYellow2:#cea800;
-$usedYellow3:#947900;
+
 $crimson: #A30f32;
 $crimson2: #8B0025;
 $neutral: #F1E5C3;
@@ -239,217 +237,19 @@ $neutral: #F1E5C3;
     main{
       display: flex;
       min-height: 800px;
-      .create{
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        .left{
-          background-color: $usedGrey1;
+      background-color: $usedGrey2;
+      .Practices{
+        margin: 0 auto;
+        position: relative;
+        padding: 20px;
+        text-align: center;
+        background-color: white;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-radius: 10px;
+        .date{
+          background-color: $crimson;
           padding: 10px;
-          margin: 20px;
-          border-radius: 20px;
-          button{
-            margin-left: 10%;
-            margin-right: 10%;
-            margin-bottom: 20px;
-            padding: 10px;
-            border: $usedBlue1 solid 2px;
-            border-radius: 20px;
-            background-color: $usedGrey1;
-            color: $usedBlue1;
-            height: 100px;
-            width: 80%;
-            transition: 0.3s;
-          }
-          button:hover{
-            background-color: #000;
-            margin-left: 5%;
-            margin-right: 5%;
-            width: 90%;
-          }
-        }
-        .right{
-                  display: grid;
-        grid-template-columns: 1fr 3fr;
-          background-color: $usedGrey1;
-          padding: 10px;
-          margin: 20px;
-          border-radius: 20px;
-          min-height: 700px;
-          .formWrapper{
-            height: fit-content;  
-            form{
-              width: 100%;
-              .fade{
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                div{
-                  width: 100%;
-                  
-                  .fullIn{
-                    border-radius: 8px;
-                    border: 1px solid #8D9298;
-                    display: flex;
-                    
-                    align-self: stretch;
-                    padding-top: 10px;
-                    margin-bottom: 20px;
-                    .Subleft{
-                      width: 20px;
-                      padding: 10px;
-                    }
-                    .Subright{
-                      display: flex;
-                      flex-direction: column;
-                      gap: 4px;
-                      margin-left: 0;
-                      label{
-                        margin-top: 10px;
-                        margin-left: 10px;
-                        min-width: 220px;
-                      }
-                      input{
-                        color: #101010;
-                        font-size: 20px;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 20px; 
-                        border:none;
-                        padding: 10px;
-                        margin: 10px;
-                        
-                      }
-                      ::placeholder {
-                        opacity: .6;
-                      }
-                      select{
-                        color: #101010;
-                        font-size: 20px;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 18px; 
-                        border:none;
-                        padding: 10px;
-                        margin: 10px;
-                        width: 50%;
-                      }
-                    }
-                  }
-                  .choices{
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 10px;
-                    width: 100%;
-                    button{
-                      display: flex;
-                      width: 100%;
-                      padding: 14px 0px;
-                      justify-content: center;
-                      align-items: center;
-                      border-radius: 4px;
-                      background: $usedGrey1;
-                      color: $usedBlue1;
-                      border: solid 2px $usedBlue1;
-                      margin-bottom: 10px;
-                      cursor:pointer;
-                    }
-                    button:hover{
-                      background: $usedGrey2;
-                    }
-                  }
-                  .logButton{
-                    display: flex;
-                    width: 100%;
-                    padding: 14px 0px;
-                    justify-content: center;
-                    align-items: center;
-                    border-radius: 4px;
-                    background: #197AFF;
-                    color: white;
-                    border: none;
-                    margin-bottom: 10px;
-                    cursor:pointer;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      .questions{
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        .left{
-          background-color: $usedGrey1;
-          padding: 10px;
-          margin: 20px;
-          border-radius: 20px;
-          text-align: center;
-          .fadeDept{
-            color: #888888;
-            cursor: pointer;
-            .fullDept{
-              
-              .nameDept{
-                padding-top: 10px;
-                background-color: $usedYellow1;
-              }
-              .nameDept:hover{
-                background-color: $usedYellow2;
-              }
-              .fadeClass{
-                .fullClass{
-                  background-color: $usedYellow2;
-                  .classNumSelected{
-                    padding: 10px;
-                    background-color: $usedYellow3;
-                    color: #bbbbbb;
-                  }
-                  .classNumNot{
-                    padding: 5px;
-                  }
-                  :hover{
-                    background-color: $usedYellow3;
-                  }
-                }
-              }
-            }
-          }
-          
-        }
-        .right{
-          .questionList{
-            .fullQuestion{
-              margin: 10px;
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              border: solid 2px $usedYellow1;
-              border-radius: 10px;
-              .ask{
-                padding: 10px;
-                h3{
-                  margin-bottom: 10px;
-                }
-              }
-              .answers{
-                padding: 10px;
-                background-color: $usedYellow1;
-                .answer{
-                  border: solid 2px $usedGrey2;
-                  font-size: 20px;
-                  margin: 5px;
-                  padding-left: 5px;
-                  padding-top: 2px;
-                  padding-bottom: 2px;
-                  height: 25px;
-                  cursor: pointer;
-                }:hover{
-                  background-color: orange;
-                }
-
-              }
-            }
-          }
         }
       }
     }

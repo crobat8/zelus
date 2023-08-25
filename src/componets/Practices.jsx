@@ -11,14 +11,51 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { db } from "../firebase";
+import FadeIn from "react-fade-in"
 
 const Practices = ()=>{
   const [date,setDate] = useState()
+  const [displaydate,setDisplayDate]=useState()
   const [practice,setPractice] = useState([])
   const{currentUser} = useContext(AuthContext);
   const[loading,setLoading] = useState(true)
   function handleDate(e){
     setDate(e.target.value)
+  }
+
+  const handleSubmit = async (e)=>{
+    e.preventDefault();
+    console.log(e)
+  }
+
+  function convertMonth(x){
+    if(x ==='01'){
+      return 'January'
+    }else if(x === '02'){
+      return 'Febuary'
+    }else if(x === '03'){
+      return 'March'
+    }else if(x === '04'){
+      return 'April'
+    }else if(x === '05'){
+      return 'May'
+    }else if(x === '06'){
+      return 'June'
+    }else if(x === '07'){
+      return 'July'
+    }else if(x === '08'){
+      return 'Augest'
+    }else if(x === '09'){
+      return 'September'
+    }else if(x === '10'){
+      return 'October'
+    }else if(x === '11'){
+      return 'November'
+    }else if(x === '12'){
+      return 'December'
+    }else{
+      return x
+    }
   }
 
   function getDate() {
@@ -40,11 +77,11 @@ const Practices = ()=>{
       day = "0"+day
     }
     setDate(`${year}-${month}-${day}`)
-    
+    month = convertMonth(month) +" "+ day
+    setDisplayDate(month)
   }
 
   const getPractice = async ()=>{
-
 
     setPractice([])
     setLoading(true)
@@ -92,11 +129,8 @@ const Practices = ()=>{
   }
 
   return(
-    <div>
-      <h1>
-        Practice
-      </h1>
-      <div>
+    <div className="Practices">
+      <div className="date">
         <h2>
           pick day of practice
         </h2>
@@ -104,24 +138,45 @@ const Practices = ()=>{
           <input type="date"/>
         </form>
       </div>
-      <div>
+      <hr
+        style={{
+          background: 'black',
+          color: 'black',
+          borderColor: 'black',
+          height: '1px',
+          margin:'5px'
+        }}
+      />
+      <div className="workouts">
         <h1>
-          workouts
+          Practice for {displaydate}
         </h1>
-        <div>
-          {practice.workouts.map((e,i)=>{
+        <form className="practiceForm" onSubmit={handleSubmit}>
+          <FadeIn>
+            {practice.workouts.map((e,i)=>{
             return(
               <div key={i}>
-                <h3>
-                  {e.exercise}X{e.reps}
-                </h3>
-                <h4>
-                  {e.notes }
-                </h4>
+              
+                <h2>
+                  {e.exercise} reps: {e.reps}
+                </h2>
+                <p>
+                  notes: {e.notes }
+                </p>
+                <label>
+                  mark distance/time
+                </label>
+                <input type="number" placeholder="ex 46.4" key={e}>
+                </input>
               </div>
             )
-          })}
-        </div>  
+            })}
+            <button>
+              submit
+            </button>
+          </FadeIn>
+
+        </form>  
       </div>
     </div>
   )
