@@ -19,12 +19,17 @@ const Practices = ()=>{
   const [practice,setPractice] = useState([])
   const{currentUser} = useContext(AuthContext);
   const[loading,setLoading] = useState(true)
+  
   function handleDate(e){
     setDate(e.target.value)
   }
 
   const handleSubmit = async (e)=>{
     e.preventDefault();
+    
+    for(var x = 0;x<practice.workouts.length;x++){
+      console.log(practice.workouts[x])
+    }
     console.log(e)
   }
 
@@ -113,16 +118,16 @@ const Practices = ()=>{
   if(loading){
     
     return(
-      <div>
-        <h1>
-          Practices
-        </h1>
-        <h2>
-          pick day of practice
-        </h2>
-        <form onChange={handleDate}>
-          <input type="date"/>
-        </form>
+      <div className="Practices">
+        <div className="date">
+          <h2>
+            pick day of practice
+          </h2>
+          <form onChange={handleDate}>
+            <input type="date"/>
+          </form>
+        </div>
+
       </div>
       
     )
